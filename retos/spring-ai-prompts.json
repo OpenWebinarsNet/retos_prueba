@@ -21,10 +21,22 @@
     "titulo": "Los cuatro componentes de un prompt",
     "descripcion": "Empareja cada componente con su definición.",
     "pares": [
-      { "concepto": "Instrucción / tarea", "definicion": "Qué debe hacer el modelo: resumir, clasificar, extraer..." },
-      { "concepto": "Contexto", "definicion": "La información necesaria para interpretar bien la tarea" },
-      { "concepto": "Restricciones", "definicion": "Los límites que debe respetar la respuesta: idioma, longitud, categorías..." },
-      { "concepto": "Formato", "definicion": "Cómo debe presentarse la respuesta: lista, JSON, una única categoría..." }
+      {
+        "concepto": "Instrucción / tarea",
+        "definicion": "Qué debe hacer el modelo: resumir, clasificar, extraer..."
+      },
+      {
+        "concepto": "Contexto",
+        "definicion": "La información necesaria para interpretar bien la tarea"
+      },
+      {
+        "concepto": "Restricciones",
+        "definicion": "Los límites que debe respetar la respuesta: idioma, longitud, categorías..."
+      },
+      {
+        "concepto": "Formato",
+        "definicion": "Cómo debe presentarse la respuesta: lista, JSON, una única categoría..."
+      }
     ],
     "pista": "Son los mismos cuatro elementos que separan un prompt débil de uno profesional."
   },
@@ -33,13 +45,28 @@
     "tipo": "detectar",
     "titulo": "Detecta el fallo: prompt débil",
     "descripcion": "Marca todos los problemas que tiene este prompt para producción.",
-    "prompt_malo": "Clasifica esta incidencia: {texto}",
+    "prompt_malo": "Clasifica esta incidencia: \"El usuario no puede iniciar sesión, le aparece un error 500 desde esta mañana.\"",
     "opciones": [
-      { "texto": "No asigna ningún rol al modelo", "correcta": true },
-      { "texto": "No indica las categorías cerradas en las que debe clasificar", "correcta": true },
-      { "texto": "No define el formato en que debe responder", "correcta": true },
-      { "texto": "Está escrito en el idioma incorrecto", "correcta": false },
-      { "texto": "El texto de la incidencia es demasiado largo", "correcta": false }
+      {
+        "texto": "No asigna ningún rol al modelo",
+        "correcta": true
+      },
+      {
+        "texto": "No indica las categorías cerradas en las que debe clasificar",
+        "correcta": true
+      },
+      {
+        "texto": "No define el formato en que debe responder",
+        "correcta": true
+      },
+      {
+        "texto": "Está escrito en el idioma incorrecto",
+        "correcta": false
+      },
+      {
+        "texto": "El texto de la incidencia es demasiado largo",
+        "correcta": false
+      }
     ],
     "pista": "Compáralo con el prompt mejorado: rol, categorías cerradas y formato de salida."
   },
@@ -49,7 +76,12 @@
     "titulo": "La unidad básica del modelo",
     "descripcion": "Elige la respuesta correcta.",
     "pregunta": "¿Cuál es la unidad básica con la que trabaja un modelo de lenguaje?",
-    "opciones": ["La palabra completa", "La frase entera", "El token", "El párrafo"],
+    "opciones": [
+      "La palabra completa",
+      "La frase entera",
+      "El token",
+      "El párrafo"
+    ],
     "correcta": 2,
     "explicacion": "Un token puede ser una palabra completa, una parte de ella, un signo de puntuación o un fragmento de código, según la tokenización.",
     "pista": "Es uno de los conceptos 'de moda' que menciona el profesor."
@@ -76,10 +108,22 @@
     "titulo": "Las piezas del contexto real",
     "descripcion": "Empareja cada pieza del prompt en producción con su función.",
     "pares": [
-      { "concepto": "Instrucciones de sistema", "definicion": "Definen el comportamiento general: rol, límites, tono, formato esperado" },
-      { "concepto": "Mensaje del usuario", "definicion": "La petición concreta que hace el usuario" },
-      { "concepto": "Documentos recuperados", "definicion": "Información adicional aportada, por ejemplo mediante RAG" },
-      { "concepto": "Historial de conversación", "definicion": "Los mensajes anteriores que la aplicación decide reenviar" }
+      {
+        "concepto": "Instrucciones de sistema",
+        "definicion": "Definen el comportamiento general: rol, límites, tono, formato esperado"
+      },
+      {
+        "concepto": "Mensaje del usuario",
+        "definicion": "La petición concreta que hace el usuario"
+      },
+      {
+        "concepto": "Documentos recuperados",
+        "definicion": "Información adicional aportada, por ejemplo mediante RAG"
+      },
+      {
+        "concepto": "Historial de conversación",
+        "definicion": "Los mensajes anteriores que la aplicación decide reenviar"
+      }
     ],
     "pista": "En una app real, el prompt no es solo lo que escribe el usuario."
   },
@@ -106,11 +150,26 @@
     "descripcion": "Marca todos los problemas que tiene este prompt para un backend.",
     "prompt_malo": "Dime qué prioridad tiene esta incidencia.",
     "opciones": [
-      { "texto": "No define qué significa 'prioridad' (impacto, urgencia, SLA...)", "correcta": true },
-      { "texto": "No indica las categorías cerradas permitidas (baja, media, alta)", "correcta": true },
-      { "texto": "No define el formato de salida esperado", "correcta": true },
-      { "texto": "Falta traducir el prompt a otro idioma", "correcta": false },
-      { "texto": "Debería incluir emojis para ser más claro", "correcta": false }
+      {
+        "texto": "No define qué significa 'prioridad' (impacto, urgencia, SLA...)",
+        "correcta": true
+      },
+      {
+        "texto": "No indica las categorías cerradas permitidas (baja, media, alta)",
+        "correcta": true
+      },
+      {
+        "texto": "No define el formato de salida esperado",
+        "correcta": true
+      },
+      {
+        "texto": "Falta traducir el prompt a otro idioma",
+        "correcta": false
+      },
+      {
+        "texto": "Debería incluir emojis para ser más claro",
+        "correcta": false
+      }
     ],
     "pista": "El backend espera un valor exacto de un conjunto cerrado, no una explicación."
   },
