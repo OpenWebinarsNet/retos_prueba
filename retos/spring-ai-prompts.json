@@ -1,87 +1,149 @@
 [
   {
     "id": "pe-01",
-    "titulo": "Qué es un prompt",
-    "descripcion": "Completa la definición correcta de un prompt profesional.",
-    "codigo": "// Un PROMPT no es solo una pregunta,\n// es una ____ diseñada para dirigir el comportamiento del modelo.",
-    "soluciones": [["instrucción", "instruccion"]],
-    "pista": "Es la palabra clave que aparece como sinónimo de 'diseño deliberado' en la lección."
+    "tipo": "quiz",
+    "titulo": "Qué es realmente un prompt",
+    "descripcion": "Elige la definición correcta según la lección.",
+    "pregunta": "En una aplicación real, ¿qué es un PROMPT?",
+    "opciones": [
+      "Una pregunta cualquiera que le hacemos a la IA",
+      "Una instrucción diseñada para dirigir el comportamiento del modelo",
+      "Un fragmento de código que ejecuta el modelo",
+      "Una plantilla fija que no se puede modificar"
+    ],
+    "correcta": 1,
+    "explicacion": "Un prompt casual puede verse como una pregunta, pero en una app real es una instrucción diseñada para dirigir qué hace el modelo, con qué contexto, límites y formato.",
+    "pista": "Piensa en la diferencia entre preguntar y dirigir."
   },
   {
     "id": "pe-02",
-    "titulo": "Los cuatro componentes de un buen prompt",
-    "descripcion": "Completa los cuatro componentes básicos que debería tener un prompt profesional.",
-    "codigo": "COMPONENTES_PROMPT = [\n    \"____\",   // qué debe hacer el modelo: resumir, clasificar, extraer...\n    \"____\",   // información necesaria para interpretar la tarea\n    \"____\",   // límites que debe respetar la respuesta\n    \"____\"    // cómo debe presentarse la respuesta\n]",
-    "soluciones": [
-      ["instrucción", "instruccion", "tarea"],
-      ["contexto"],
-      ["restricciones", "límites", "limites"],
-      ["formato"]
+    "tipo": "emparejar",
+    "titulo": "Los cuatro componentes de un prompt",
+    "descripcion": "Empareja cada componente con su definición.",
+    "pares": [
+      { "concepto": "Instrucción / tarea", "definicion": "Qué debe hacer el modelo: resumir, clasificar, extraer..." },
+      { "concepto": "Contexto", "definicion": "La información necesaria para interpretar bien la tarea" },
+      { "concepto": "Restricciones", "definicion": "Los límites que debe respetar la respuesta: idioma, longitud, categorías..." },
+      { "concepto": "Formato", "definicion": "Cómo debe presentarse la respuesta: lista, JSON, una única categoría..." }
     ],
-    "pista": "En este orden: instrucción/tarea, contexto, restricciones, formato."
+    "pista": "Son los mismos cuatro elementos que separan un prompt débil de uno profesional."
   },
   {
     "id": "pe-03",
-    "titulo": "Prompt débil vs prompt mejorado",
-    "descripcion": "Completa el prompt mejorado del clasificador de incidencias, añadiendo el rol y la categoría que falta.",
-    "codigo": "// Prompt débil:\n// \"Clasifica esta incidencia: {texto}\"\n\n// Prompt mejorado:\n\"Eres un ____ de clasificación.\nClasifica en estas categorías: login, ____ o error.\nDevuelve únicamente la categoría.\"",
-    "soluciones": [["sistema"], ["performance"]],
-    "pista": "El rol que asumes, y la categoría que falta junto a 'login' y 'error'."
+    "tipo": "detectar",
+    "titulo": "Detecta el fallo: prompt débil",
+    "descripcion": "Marca todos los problemas que tiene este prompt para producción.",
+    "prompt_malo": "Clasifica esta incidencia: {texto}",
+    "opciones": [
+      { "texto": "No asigna ningún rol al modelo", "correcta": true },
+      { "texto": "No indica las categorías cerradas en las que debe clasificar", "correcta": true },
+      { "texto": "No define el formato en que debe responder", "correcta": true },
+      { "texto": "Está escrito en el idioma incorrecto", "correcta": false },
+      { "texto": "El texto de la incidencia es demasiado largo", "correcta": false }
+    ],
+    "pista": "Compáralo con el prompt mejorado: rol, categorías cerradas y formato de salida."
   },
   {
     "id": "pe-04",
+    "tipo": "quiz",
     "titulo": "La unidad básica del modelo",
-    "descripcion": "Completa el concepto que sustituye a 'palabra' o 'frase' como unidad de trabajo del modelo.",
-    "codigo": "// El modelo no procesa palabras ni frases,\n// procesa ____.\n// Puede ser una palabra completa, parte de ella,\n// un signo de puntuación o un fragmento de código.",
-    "soluciones": [["tokens", "token"]],
+    "descripcion": "Elige la respuesta correcta.",
+    "pregunta": "¿Cuál es la unidad básica con la que trabaja un modelo de lenguaje?",
+    "opciones": ["La palabra completa", "La frase entera", "El token", "El párrafo"],
+    "correcta": 2,
+    "explicacion": "Un token puede ser una palabra completa, una parte de ella, un signo de puntuación o un fragmento de código, según la tokenización.",
     "pista": "Es uno de los conceptos 'de moda' que menciona el profesor."
   },
   {
     "id": "pe-05",
+    "tipo": "quiz",
     "titulo": "Cómo genera texto el modelo",
-    "descripcion": "Completa cómo construye su respuesta el modelo, pieza a pieza.",
-    "codigo": "mientras (respuesta no completa) {\n    siguiente____ = calcularMasProbable(contexto);\n    respuesta.añadir(siguiente____);\n}",
-    "soluciones": [["token"], ["token"]],
-    "pista": "Repite la unidad básica del reto anterior, dos veces."
+    "descripcion": "Elige la respuesta correcta.",
+    "pregunta": "¿Cómo genera su respuesta un modelo de lenguaje?",
+    "opciones": [
+      "Consultando una base de datos con la información exacta",
+      "Calculando el token siguiente más probable y repitiendo el proceso",
+      "Ejecutando una función determinista fija",
+      "Copiando literalmente fragmentos de su entrenamiento"
+    ],
+    "correcta": 1,
+    "explicacion": "El modelo recibe una secuencia de tokens, calcula el siguiente más probable, lo añade y repite el proceso hasta completar la respuesta.",
+    "pista": "Piensa en un proceso que se repite token a token."
   },
   {
     "id": "pe-06",
-    "titulo": "La ventana de contexto",
-    "descripcion": "Completa la definición de la ventana de contexto.",
-    "codigo": "// La ventana de contexto es el ____ de información\n// que el modelo puede procesar en una única petición.\n// Todo lo que quede fuera, no se procesa.",
-    "soluciones": [["límite", "limite"]],
-    "pista": "Es lo que impide enviar un documento completo sin más."
+    "tipo": "emparejar",
+    "titulo": "Las piezas del contexto real",
+    "descripcion": "Empareja cada pieza del prompt en producción con su función.",
+    "pares": [
+      { "concepto": "Instrucciones de sistema", "definicion": "Definen el comportamiento general: rol, límites, tono, formato esperado" },
+      { "concepto": "Mensaje del usuario", "definicion": "La petición concreta que hace el usuario" },
+      { "concepto": "Documentos recuperados", "definicion": "Información adicional aportada, por ejemplo mediante RAG" },
+      { "concepto": "Historial de conversación", "definicion": "Los mensajes anteriores que la aplicación decide reenviar" }
+    ],
+    "pista": "En una app real, el prompt no es solo lo que escribe el usuario."
   },
   {
     "id": "pe-07",
-    "titulo": "Separar instrucciones y datos",
-    "descripcion": "Completa la buena práctica que evita respuestas menos seguras y predecibles.",
-    "codigo": "// Buena práctica:\n// separar las ____ de la aplicación\n// de los datos que introduce el usuario.",
-    "soluciones": [["instrucciones", "reglas"]],
-    "pista": "Si se mezclan sin cuidado con el contenido del usuario, hay riesgo."
+    "tipo": "quiz",
+    "titulo": "La ventana de contexto",
+    "descripcion": "Elige la respuesta correcta.",
+    "pregunta": "¿Qué ocurre con la información que queda fuera de la ventana de contexto?",
+    "opciones": [
+      "El modelo la recuerda igualmente para peticiones futuras",
+      "Se guarda automáticamente en una base de datos",
+      "No se procesa",
+      "Se resume automáticamente por el sistema"
+    ],
+    "correcta": 2,
+    "explicacion": "Todo lo que esté dentro de la ventana puede influir en la respuesta; todo lo que quede fuera, no se procesa.",
+    "pista": "Es el límite de información que el modelo puede procesar en una petición."
   },
   {
     "id": "pe-08",
-    "titulo": "Qué es una alucinación",
-    "descripcion": "Completa la definición de alucinación en un modelo de IA.",
-    "codigo": "// Una alucinación es una respuesta ____,\n// incorrecta o no verificable,\n// que el modelo presenta como si fuese cierta.",
-    "soluciones": [["inventada"]],
-    "pista": "Es lo contrario de estar basada en hechos reales."
+    "tipo": "detectar",
+    "titulo": "Detecta el fallo: prompt ambiguo",
+    "descripcion": "Marca todos los problemas que tiene este prompt para un backend.",
+    "prompt_malo": "Dime qué prioridad tiene esta incidencia.",
+    "opciones": [
+      { "texto": "No define qué significa 'prioridad' (impacto, urgencia, SLA...)", "correcta": true },
+      { "texto": "No indica las categorías cerradas permitidas (baja, media, alta)", "correcta": true },
+      { "texto": "No define el formato de salida esperado", "correcta": true },
+      { "texto": "Falta traducir el prompt a otro idioma", "correcta": false },
+      { "texto": "Debería incluir emojis para ser más claro", "correcta": false }
+    ],
+    "pista": "El backend espera un valor exacto de un conjunto cerrado, no una explicación."
   },
   {
     "id": "pe-09",
-    "titulo": "Prompt sin formato controlado",
-    "descripcion": "Completa por qué 'probablemente alta' no sirve como respuesta para el backend.",
-    "codigo": "valoresValidos = [\"baja\", \"media\", \"____\"]\n\n// Respuesta del modelo: \"probablemente alta\"\n// -> NO es válida porque no es una ____ exacta del conjunto permitido.",
-    "soluciones": [["alta"], ["categoría", "categoria"]],
-    "pista": "El tercer nivel de prioridad, y qué exige exactamente la validación."
+    "tipo": "quiz",
+    "titulo": "Qué es una alucinación",
+    "descripcion": "Elige la respuesta correcta.",
+    "pregunta": "¿Qué es una alucinación en un modelo de IA?",
+    "opciones": [
+      "Un error técnico que detiene la ejecución",
+      "Una respuesta inventada, incorrecta o no verificable que el modelo presenta como cierta",
+      "Un fallo de conexión con el servidor del modelo",
+      "Una respuesta que tarda demasiado en generarse"
+    ],
+    "correcta": 1,
+    "explicacion": "El problema es que puede estar redactada con seguridad, sonar razonable y tener apariencia profesional sin ser correcta.",
+    "pista": "No tiene que ver con errores técnicos, sino con el contenido de la respuesta."
   },
   {
     "id": "pe-10",
-    "titulo": "Menos ambigüedad, más control",
-    "descripcion": "Completa la conclusión clave de esta parte del curso.",
-    "codigo": "// Regla de oro de la Ingeniería de Prompts:\n// menos ____ significa más ____.",
-    "soluciones": [["ambigüedad", "ambiguedad"], ["control"]],
-    "pista": "Es la idea con la que se cierra la primera lección."
+    "tipo": "quiz",
+    "titulo": "Por qué el modelo 'inventa'",
+    "descripcion": "Elige la respuesta correcta.",
+    "pregunta": "¿Por qué un modelo puede inventar información cuando falta contexto?",
+    "opciones": [
+      "Porque intenta completar los huecos para dar una respuesta útil, en lugar de detenerse",
+      "Porque consulta fuentes externas no verificadas",
+      "Porque prioriza siempre la respuesta más corta posible",
+      "Porque repite literalmente ejemplos de su entrenamiento"
+    ],
+    "correcta": 0,
+    "explicacion": "Si falta información, el modelo no siempre se detiene: muchas veces intenta completar para dar una respuesta útil, y ahí aparece el riesgo.",
+    "pista": "Piensa en qué prioriza el modelo: fluidez o exactitud."
   }
 ]
