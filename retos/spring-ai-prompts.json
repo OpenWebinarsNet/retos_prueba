@@ -1,0 +1,87 @@
+[
+  {
+    "id": "pe-01",
+    "titulo": "Qué es un prompt",
+    "descripcion": "Completa la definición correcta de un prompt profesional.",
+    "codigo": "// Un PROMPT no es solo una pregunta,\n// es una ____ diseñada para dirigir el comportamiento del modelo.",
+    "soluciones": [["instrucción", "instruccion"]],
+    "pista": "Es la palabra clave que aparece como sinónimo de 'diseño deliberado' en la lección."
+  },
+  {
+    "id": "pe-02",
+    "titulo": "Los cuatro componentes de un buen prompt",
+    "descripcion": "Completa los cuatro componentes básicos que debería tener un prompt profesional.",
+    "codigo": "COMPONENTES_PROMPT = [\n    \"____\",   // qué debe hacer el modelo: resumir, clasificar, extraer...\n    \"____\",   // información necesaria para interpretar la tarea\n    \"____\",   // límites que debe respetar la respuesta\n    \"____\"    // cómo debe presentarse la respuesta\n]",
+    "soluciones": [
+      ["instrucción", "instruccion", "tarea"],
+      ["contexto"],
+      ["restricciones", "límites", "limites"],
+      ["formato"]
+    ],
+    "pista": "En este orden: instrucción/tarea, contexto, restricciones, formato."
+  },
+  {
+    "id": "pe-03",
+    "titulo": "Prompt débil vs prompt mejorado",
+    "descripcion": "Completa el prompt mejorado del clasificador de incidencias, añadiendo el rol y la categoría que falta.",
+    "codigo": "// Prompt débil:\n// \"Clasifica esta incidencia: {texto}\"\n\n// Prompt mejorado:\n\"Eres un ____ de clasificación.\nClasifica en estas categorías: login, ____ o error.\nDevuelve únicamente la categoría.\"",
+    "soluciones": [["sistema"], ["performance"]],
+    "pista": "El rol que asumes, y la categoría que falta junto a 'login' y 'error'."
+  },
+  {
+    "id": "pe-04",
+    "titulo": "La unidad básica del modelo",
+    "descripcion": "Completa el concepto que sustituye a 'palabra' o 'frase' como unidad de trabajo del modelo.",
+    "codigo": "// El modelo no procesa palabras ni frases,\n// procesa ____.\n// Puede ser una palabra completa, parte de ella,\n// un signo de puntuación o un fragmento de código.",
+    "soluciones": [["tokens", "token"]],
+    "pista": "Es uno de los conceptos 'de moda' que menciona el profesor."
+  },
+  {
+    "id": "pe-05",
+    "titulo": "Cómo genera texto el modelo",
+    "descripcion": "Completa cómo construye su respuesta el modelo, pieza a pieza.",
+    "codigo": "mientras (respuesta no completa) {\n    siguiente____ = calcularMasProbable(contexto);\n    respuesta.añadir(siguiente____);\n}",
+    "soluciones": [["token"], ["token"]],
+    "pista": "Repite la unidad básica del reto anterior, dos veces."
+  },
+  {
+    "id": "pe-06",
+    "titulo": "La ventana de contexto",
+    "descripcion": "Completa la definición de la ventana de contexto.",
+    "codigo": "// La ventana de contexto es el ____ de información\n// que el modelo puede procesar en una única petición.\n// Todo lo que quede fuera, no se procesa.",
+    "soluciones": [["límite", "limite"]],
+    "pista": "Es lo que impide enviar un documento completo sin más."
+  },
+  {
+    "id": "pe-07",
+    "titulo": "Separar instrucciones y datos",
+    "descripcion": "Completa la buena práctica que evita respuestas menos seguras y predecibles.",
+    "codigo": "// Buena práctica:\n// separar las ____ de la aplicación\n// de los datos que introduce el usuario.",
+    "soluciones": [["instrucciones", "reglas"]],
+    "pista": "Si se mezclan sin cuidado con el contenido del usuario, hay riesgo."
+  },
+  {
+    "id": "pe-08",
+    "titulo": "Qué es una alucinación",
+    "descripcion": "Completa la definición de alucinación en un modelo de IA.",
+    "codigo": "// Una alucinación es una respuesta ____,\n// incorrecta o no verificable,\n// que el modelo presenta como si fuese cierta.",
+    "soluciones": [["inventada"]],
+    "pista": "Es lo contrario de estar basada en hechos reales."
+  },
+  {
+    "id": "pe-09",
+    "titulo": "Prompt sin formato controlado",
+    "descripcion": "Completa por qué 'probablemente alta' no sirve como respuesta para el backend.",
+    "codigo": "valoresValidos = [\"baja\", \"media\", \"____\"]\n\n// Respuesta del modelo: \"probablemente alta\"\n// -> NO es válida porque no es una ____ exacta del conjunto permitido.",
+    "soluciones": [["alta"], ["categoría", "categoria"]],
+    "pista": "El tercer nivel de prioridad, y qué exige exactamente la validación."
+  },
+  {
+    "id": "pe-10",
+    "titulo": "Menos ambigüedad, más control",
+    "descripcion": "Completa la conclusión clave de esta parte del curso.",
+    "codigo": "// Regla de oro de la Ingeniería de Prompts:\n// menos ____ significa más ____.",
+    "soluciones": [["ambigüedad", "ambiguedad"], ["control"]],
+    "pista": "Es la idea con la que se cierra la primera lección."
+  }
+]
