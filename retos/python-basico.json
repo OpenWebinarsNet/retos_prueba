@@ -1,0 +1,26 @@
+[
+  {
+    "id": "py-01",
+    "titulo": "Recorrer un rango",
+    "descripcion": "Completa el bucle para imprimir los números del 0 al 4.",
+    "codigo": "for i in ____(5):\n    print(i)",
+    "soluciones": [["range"]],
+    "pista": "Función incorporada que genera una secuencia de números."
+  },
+  {
+    "id": "py-02",
+    "titulo": "Definir una función",
+    "descripcion": "Completa la definición para que la función devuelva el doble del número.",
+    "codigo": "____ doble(n):\n    ____ n * 2",
+    "soluciones": [["def"], ["return"]],
+    "pista": "Palabra clave para declarar una función, y palabra clave para devolver un valor."
+  },
+  {
+    "id": "py-03",
+    "titulo": "Longitud de una lista",
+    "descripcion": "Completa la condición para saber si la lista está vacía.",
+    "codigo": "if ____(lista) == 0:\n    print(\"vacía\")",
+    "soluciones": [["len"]],
+    "pista": "Función que devuelve cuántos elementos tiene una colección."
+  }
+]

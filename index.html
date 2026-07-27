@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retos // sala de máquinas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="deck">
+
+  <header class="deck__header">
+    <div class="brand">
+      <span class="brand__mark">&gt;_</span>
+      <div class="brand__text">
+        <h1>Sala de retos</h1>
+        <p>Completa el código. No se aceptan huecos vacíos.</p>
+      </div>
+    </div>
+    <button id="btn-reset" class="btn btn--ghost" title="Borra el progreso guardado en este navegador">Reiniciar progreso</button>
+  </header>
+
+  <div class="deck__body">
+
+    <aside class="sidebar">
+      <h2 class="sidebar__title">Formaciones</h2>
+      <nav id="lista-formaciones" class="course-list" aria-label="Selector de formación"></nav>
+    </aside>
+
+    <main class="main">
+
+      <section id="tira-retos" class="strip" aria-label="Retos de la formación seleccionada"></section>
+
+      <section id="zona-reto" class="challenge" hidden>
+
+        <div class="challenge__meta">
+          <span id="reto-indice" class="tag"></span>
+          <h2 id="reto-titulo"></h2>
+        </div>
+        <p id="reto-descripcion" class="challenge__desc"></p>
+
+        <div class="card" id="tarjeta-codigo">
+          <div class="card__notch"></div>
+          <pre class="code" id="reto-codigo"></pre>
+          <div class="card__stamp" id="sello">RESUELTO</div>
+        </div>
+
+        <div class="challenge__actions">
+          <button id="btn-comprobar" class="btn btn--accent">Comprobar</button>
+          <button id="btn-pista" class="btn btn--ghost">Pista</button>
+          <button id="btn-siguiente" class="btn btn--ghost" hidden>Siguiente reto →</button>
+        </div>
+
+        <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+
+      </section>
+
+      <section id="zona-vacia" class="empty">
+        <p>Elige una formación en el panel de la izquierda para empezar.</p>
+      </section>
+
+      <section id="zona-completo" class="empty" hidden>
+        <p>Has completado todos los retos de esta formación. 🎉</p>
+      </section>
+
+    </main>
+
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

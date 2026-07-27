@@ -1,0 +1,26 @@
+[
+  {
+    "id": "js-01",
+    "titulo": "Declarar una constante",
+    "descripcion": "Completa la declaración de una variable que no debe reasignarse.",
+    "codigo": "____ nombre = \"Ada\";\nconsole.log(nombre);",
+    "soluciones": [["const"]],
+    "pista": "Palabra clave para declarar una variable inmutable."
+  },
+  {
+    "id": "js-02",
+    "titulo": "Función flecha",
+    "descripcion": "Completa la función flecha que suma dos números.",
+    "codigo": "const sumar = (a, b) ____ a + b;",
+    "soluciones": [["=>"]],
+    "pista": "Símbolo que separa los parámetros del cuerpo en una arrow function."
+  },
+  {
+    "id": "js-03",
+    "titulo": "Recorrer un array",
+    "descripcion": "Completa el método para ejecutar una función por cada elemento.",
+    "codigo": "numeros.____(n => console.log(n));",
+    "soluciones": [["forEach"]],
+    "pista": "Método de array que ejecuta una función en cada elemento."
+  }
+]
