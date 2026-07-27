@@ -3,6 +3,7 @@
 const FORMACIONES = [
   { id: "python-basico", nombre: "Python básico", archivo: "retos/python-basico.json" },
   { id: "js-basico", nombre: "JavaScript básico", archivo: "retos/js-basico.json" },
+  { id: "spring-ai-prompts", nombre: "Ingeniería de prompts (Spring AI)", archivo: "retos/spring-ai-prompts.json" },
 ];
 
 const STORAGE_PREFIX = "retos-progreso::";
